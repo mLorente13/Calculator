@@ -8,13 +8,18 @@
 </head>
 <body>
     <main class="w-full h-screen bg-[#333] flex justify-center items-center">
-        <section class="w-[375px] h-[812px] bg-[#16171d] rounded-xl px-[20px] py-8">
-            <header class="w-[30%] mx-auto bg-white h-10">
-                <input type="checkbox" id="theme-selector" class="visible"/>
-                <label for="theme-selector">Test</label>
+        <section class="w-[375px] h-[812px] bg-[#f1f2f3] dark:bg-[#16171d] rounded-xl px-[20px] py-8">
+            <header class="w-[30%] mx-auto flex items-center justify-center">
+                <input type="checkbox" id="themeSelector" class="h-0 w-0 invisible relative"/>
+                <label id="themeLabel" class="flex items-center cursor-pointer indent-[-9999px] w-[72px] h-[32px] bg-[#fefeff] dark:bg-[#2f2f39] rounded-3xl relative after:content-[''] after:absolute after:w-[24px] after:h-[24px]
+                              after:bg-[#d3d2da] after:dark:bg-[#4e505f] after:rounded-[50%] after:duration-[.3s]" for="themeSelector">
+                              <img id="moonIcon" class="absolute top-[6px] left-[46px] duration-300" src="./assets/icons/moon-icon.svg">
+                              <img id="sunIcon" class="absolute top-[6px] left-[4px] duration-300" src="./assets/icons/sun-icon.svg" />
+                </label>
             </header>
             <h1>Calculator</h1>
         </section>
     </main>
 </body>
+<script src="./index.js"></script>
 </html>
