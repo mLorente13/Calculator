@@ -17,14 +17,14 @@ function setColorScheme() {
         html.classList.add('dark');
         console.log(html.classList);
         themeLabel.classList.add('after:left-[4px]');
-        moonIcon.classList.add("opacity-0");
-        sunIcon.classList.remove("opacity-0");
+        moonIcon.classList.remove("opacity-0");
+        sunIcon.classList.add("opacity-0");
     } else {
         console.log("light");
         html.classList.remove('dark');
         themeLabel.classList.add('after:left-[45px]');
-        moonIcon.classList.add("opacity-0");
-        sunIcon.classList.remove("opacity-0");
+        moonIcon.classList.remove("opacity-0");
+        sunIcon.classList.add("opacity-0");
     }
 
     themeSelector.addEventListener('click', () => {
