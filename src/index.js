@@ -31,11 +31,13 @@ function setColorScheme() {
         if (html.classList.contains('dark')) {
             html.classList.remove('dark');
             themeLabel.classList.remove('after:left-[4px]');
+            themeLabel.classList.add('after:left-[45px]');
             moonIcon.classList.add("opacity-0");
             sunIcon.classList.remove("opacity-0");
         } else {
             html.classList.add('dark');
             themeLabel.classList.add('after:left-[4px]');
+            themeLabel.classList.remove('after:left-[45px]');
             moonIcon.classList.remove("opacity-0");
             sunIcon.classList.add("opacity-0");
         }
