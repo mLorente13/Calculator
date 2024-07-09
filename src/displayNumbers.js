@@ -1,5 +1,7 @@
 const display = document.getElementById('result');
 const seconDisplay = document.getElementById('operation');
+let startX = 0;
+let mouseUp = false;
 
 function updateDisplay(tile) {
     if (tile.dataset.value === 'backspace') return display.textContent = display.textContent.slice(0, -1) || '0';
@@ -46,6 +48,25 @@ display.addEventListener('wheel', (e) => {
         display.scrollLeft -= 10;
         seconDisplay.scrollLeft -= 10;
     }
+});
+
+display.addEventListener('mousedown', (e) => {
+    mouseUp = false;
+    e.preventDefault();
+    startX = e.clientX;
+    display.style.cursor = 'grabbing';
+});
+
+display.addEventListener('mousemove', (e) => {
+    if (mouseUp) return;
+    display.scrollLeft += startX - e.clientX;
+    seconDisplay.scrollLeft += startX - e.clientX;
+    startX = e.clientX;
+});
+
+window.addEventListener('mouseup', () => {
+    mouseUp = true;
+    display.style.cursor = 'grab';
 });
 
 export { updateDisplay };
