@@ -6,6 +6,20 @@ let mouseUp = false;
 function updateDisplay(tile) {
     if (tile.dataset.value === "backspace")
         return (display.textContent = display.textContent.slice(0, -1) || "0");
+    if (tile.dataset.value === "plus-minus") {
+        if (containsMoreThanOneNumber()) {
+                let numbers = display.textContent.split(/[-+*\/%]/);
+                let lastNumber = numbers.pop();
+                let newNumber = lastNumber * -1;
+                if (newNumber === -0) return display.textContent = "Error";
+                numbers.push(newNumber);
+                let newDisplay = numbers.join("");
+                display.textContent = newDisplay;
+        } else {
+            display.textContent = display.textContent * -1;
+        }
+        return;
+    }
     if (tile.dataset.value === "C") {
         display.textContent = "0";
         seconDisplay.textContent = "0";
@@ -16,6 +30,14 @@ function updateDisplay(tile) {
     if (display.textContent == "0" && tile.dataset.value !== ".")
         return (display.textContent = tile.dataset.value);
     display.textContent += tile.dataset.value;
+}
+
+function containsMoreThanOneNumber() {
+    if (display.textContent.includes("+") || display.textContent.includes("-") || display.textContent.includes("*") || display.textContent.includes("/") || display.textContent.includes("%")) {
+        return true;
+    } else {
+        return false;
+    }
 }
 
 function calculateOperation(operation) {
