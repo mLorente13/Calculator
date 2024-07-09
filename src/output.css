@@ -648,6 +648,10 @@ video {
   width: 100vw;
 }
 
+.w-auto {
+  width: auto;
+}
+
 .cursor-pointer {
   cursor: pointer;
 }
@@ -729,6 +733,14 @@ video {
 .py-8 {
   padding-top: 2rem;
   padding-bottom: 2rem;
+}
+
+.text-left {
+  text-align: left;
+}
+
+.text-right {
+  text-align: right;
 }
 
 .text-end {
@@ -852,6 +864,10 @@ video {
 
   .sm\:gap-4 {
     gap: 1rem;
+  }
+
+  .sm\:rounded-xl {
+    border-radius: 0.75rem;
   }
 }
 
